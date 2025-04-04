@@ -24,7 +24,7 @@ To set up the project environment, follow these steps:
 
 1. **Clone the Repository**  
    ```bash
-   git clone <repo_url>
+   git clone https://github.com/IlhamNur/BDSE_CAI_Project_Source_Code.git
    cd BDSE_CAI_PROJECT_SOURCE_CODE
    ```
 
