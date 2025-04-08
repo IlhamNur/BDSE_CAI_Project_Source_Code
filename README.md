@@ -35,10 +35,9 @@ BDSE_CAI_PROJECT_SOURCE_CODE/
 
 ## 🔧 Setup Instructions
 
-1. **Clone Repository**
+1. **Ubah Directory**
 
 ```bash
-git clone https://github.com/IlhamNur/BDSE_CAI_Project_Source_Code.git
 cd BDSE_CAI_PROJECT_SOURCE_CODE
 ```
 
