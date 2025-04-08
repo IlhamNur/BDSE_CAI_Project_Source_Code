@@ -6,3 +6,5 @@ Validation.zip
 Training.zip
 test
 data
+scaler.pkl
+best_final_model.pkl
