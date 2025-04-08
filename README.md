@@ -1,71 +1,117 @@
-# BDSE_CAI_PROJECT_SOURCE_CODE
+# 🧠 BDSE_CAI_PROJECT_SOURCE_CODE
 
 ## 📌 Project Overview  
-This project focuses on **credit card fraud detection** using machine learning techniques. It involves **data preparation, cleaning, and exploratory data analysis (EDA)** on datasets containing fraudulent and non-fraudulent transactions.
+
+Proyek ini mencakup dua fokus utama:
+
+1. **Credit Card Fraud Detection** menggunakan algoritma Machine Learning.
+2. **Gender Classification from Images** menggunakan Convolutional Neural Networks (CNN).
+
+Keduanya dilakukan secara end-to-end mulai dari preprocessing data, pelatihan model, evaluasi, hingga dokumentasi.
 
 ---
 
 ## 📁 Project Structure  
+
 ```
 BDSE_CAI_PROJECT_SOURCE_CODE/
-│── .venv/                  # Virtual environment (dependencies)
-│── .gitignore              # Git ignore file to exclude unnecessary files
-│── Capstone_Dataset.csv    # Main dataset used for analysis
-│── fraudTest.csv           # Testing dataset for fraud detection
-│── fraudTrain.csv          # Training dataset for fraud detection
-│── requirements.txt        # Python dependencies for the project
-│── task.ipynb              # Jupyter Notebook for analysis and model training
+│── data/
+│   ├── train/                  # Folder gambar latih (male/female)
+│   ├── valid/                  # Folder gambar validasi (male/female)
+│   ├── Training.zip            # ZIP data latih untuk gender classification
+│   └── Validation.zip          # ZIP data validasi untuk gender classification
+│
+│── fraudTrain.csv              # Dataset pelatihan untuk fraud detection
+│── fraudTest.csv               # Dataset pengujian untuk fraud detection
+│── Capstone_Dataset.csv        # Dataset gabungan
+│── best_final_model.pkl        # Model fraud detection yang telah disimpan
+│── scaler.pkl                  # Skaler data yang digunakan untuk normalisasi
+│── task.ipynb                  # Jupyter Notebook utama untuk seluruh project
+│── requirements.txt            # Daftar dependencies Python
+│── README.md                   # Dokumentasi proyek ini
 ```
 
 ---
 
-## 🔧 Setup Instructions  
-To set up the project environment, follow these steps:
+## 🔧 Setup Instructions
 
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/IlhamNur/BDSE_CAI_Project_Source_Code.git
-   cd BDSE_CAI_PROJECT_SOURCE_CODE
-   ```
+1. **Clone Repository**
 
-2. **Create a Virtual Environment** (optional but recommended)  
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Mac/Linux
-   .venv\Scripts\activate     # On Windows
-   ```
+```bash
+git clone https://github.com/IlhamNur/BDSE_CAI_Project_Source_Code.git
+cd BDSE_CAI_PROJECT_SOURCE_CODE
+```
 
-3. **Install Dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
+2. **Aktifkan Virtual Environment** (opsional tapi direkomendasikan)
 
-4. **Open Jupyter Notebook**  
-   ```bash
-   jupyter notebook
-   ```
-   Then open `task.ipynb` and run the cells.
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# Mac/Linux
+source .venv/bin/activate
+```
 
----
+3. **Install Dependencies**
 
-## 📊 Dataset Description  
-- **Capstone_Dataset.csv**: Contains transactions labeled as fraudulent or non-fraudulent.  
-- **fraudTrain.csv**: Training dataset for model training.  
-- **fraudTest.csv**: Testing dataset for evaluating model performance.  
+```bash
+pip install -r requirements.txt
+```
 
----
+4. **Jalankan Notebook**
 
-## 📌 Key Features  
-- **Data Cleaning & Preprocessing**  
-- **Exploratory Data Analysis (EDA)**  
-- **Feature Engineering**  
-- **Machine Learning Model Training & Evaluation**  
+```bash
+jupyter notebook
+```
+
+Buka `task.ipynb` dan jalankan langkah-langkah secara berurutan.
 
 ---
 
-## 🚀 Future Improvements  
-- Implement deep learning models  
-- Improve feature selection techniques  
-- Deploy model for real-time fraud detection  
+## 📊 Dataset Description
+
+### Fraud Detection
+
+- **fraudTrain.csv** dan **fraudTest.csv**: Berisi data transaksi keuangan dengan label fraud (1) dan non-fraud (0).
+- **Capstone_Dataset.csv**: Dataset gabungan yang digunakan untuk eksplorasi dan visualisasi awal.
+
+### Gender Classification
+
+- Gambar dalam ZIP `Training.zip` dan `Validation.zip` telah diekstrak ke folder `data/train/` dan `data/valid/`, masing-masing dengan subfolder `male` dan `female`.
 
 ---
+
+## 📌 Project Activities
+
+### ✅ Activity 4–8: Fraud Detection
+
+- Data cleaning, visualisasi, dan preprocessing.
+- Penanganan imbalance dengan **SMOTE**.
+- Pelatihan model ML: Logistic Regression, Random Forest, XGBoost, dll.
+- Evaluasi: Confusion Matrix, ROC AUC, Precision, Recall, Accuracy.
+
+### ✅ Activity 9–11: Gender Classifier
+
+- Ekstraksi dan penataan gambar.
+- Preprocessing: Resize, normalize, augmentasi.
+- Arsitektur CNN menggunakan `Conv2D`, `MaxPooling`, dan `Dense`.
+- Evaluasi model: Accuracy, ROC-AUC, Loss Curve.
+- Simpan model terbaik.
+
+---
+
+## ✅ Key Features
+
+- 📊 **EDA Lengkap** dengan visualisasi data distribusi fraud.
+- 🧠 **ML Model Evaluation** dengan metrik evaluasi yang lengkap.
+- 📸 **CNN untuk Klasifikasi Gambar** (Male/Female).
+- 🧪 **Cross-validation & Hyperparameter Tuning**.
+- 📂 **Modular & Terstruktur**.
+
+---
+
+## 🚀 Future Improvements
+
+- Deploy model fraud detection ke dalam API (Flask/FastAPI).
+- Tambahkan augmentasi data dan transfer learning untuk gender classification.
+- Buat UI dashboard sederhana untuk presentasi hasil model.
